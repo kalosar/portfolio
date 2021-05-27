@@ -11,10 +11,13 @@
       space-x-4
     "
   >
-    <a href="#" class="dock-button bg-black">
+    <a href="https://github.com/kalosar" class="dock-button bg-black">
       <icon-github class="text-white fill-current" />
     </a>
-    <a href="#" class="dock-button bg-blue-500">
+    <a
+      href="https://www.linkedin.com/in/marius-e-g-andresen/"
+      class="dock-button bg-blue-500"
+    >
       <icon-linkedin class="text-white fill-current" />
     </a>
   </div>
