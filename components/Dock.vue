@@ -5,7 +5,6 @@
       items-center
       py-2
       px-6
-      mb-2
       bg-gray-900 bg-opacity-90
       rounded-xl
       space-x-4

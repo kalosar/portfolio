@@ -1,19 +1,7 @@
 <template>
-  <div
-    class="
-      z-10
-      h-5/6
-      w-1/2
-      absolute
-      flex flex-col
-      bg-gray-900 bg-opacity-90
-      rounded-lg
-      shadow-lg
-    "
-  >
+  <div class="flex flex-col bg-gray-900 bg-opacity-90 rounded-lg shadow">
     <div
       class="
-        z-20
         flex
         justify-between
         bg-gray-900
@@ -21,6 +9,7 @@
         px-2
         py-1
         text-gray-400 text-sm
+        shadow
       "
     >
       <div class="flex items-center space-x-1.5 text-gray-700 fill-current">
@@ -28,16 +17,13 @@
         <icon-circle class="h-3 transition hover:text-yellow-500" />
         <icon-circle class="h-3 transition hover:text-green-500" />
       </div>
-      <div class="select-none">Portfolio</div>
-      <div class="select-none"></div>
+      <div class="select-none font-bold">Portfolio</div>
+      <div />
     </div>
-    <div
-      class="flex flex-col flex-grow overflow-auto p-2 text-gray-400 font-mono"
-    >
-      <div>
-        <ul>
-          <li v-html="commands.help" />
-        </ul>
+
+    <div class="flex flex-col flex-grow overflow-auto p-2 font-mono">
+      <div v-for="item in history" :key="item" class="whitespace-pre-line">
+        {{ item }}
       </div>
       <div>
         <span>kalosar@macbook></span>
@@ -53,19 +39,22 @@ export default {
   name: 'ConsoleWindow',
   data() {
     return {
+      history: [],
+      prefix: 'kalosar@macbook> ',
       userInput: '',
       commands: {
         help:
-          '<p>Commands</p>\n' +
-          '<p>--------</p>\n' +
-          '<p>[h]|[help] ------- Print list of commands</p>\n' +
-          '<p>[i]|[info] ------- Print info about me</p>\n' +
-          '<p>[s]|[skills] ----- List skills</p>\n' +
-          '<p>[e]|[experience] - List experience</p>\n' +
-          '<br />\n' +
-          '</div>',
+          'Commands\n' +
+          '--------\n' +
+          '[help] ------- Print list of commands\n' +
+          '[info] ------- Print info about me\n' +
+          '[skills] ----- List skills\n' +
+          '[experience] - List experience\n',
       },
     }
+  },
+  mounted() {
+    this.history.push(this.commands.help)
   },
 }
 </script>

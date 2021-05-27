@@ -1,9 +1,15 @@
 <template>
   <div
-    class="flex flex-col h-screen w-screen bg-cover"
-    style="background-image: url(/bg-work-harder.jpg)"
+    class="
+      flex flex-col
+      h-screen
+      w-screen
+      bg-cover bg-gradient-to-br
+      text-gray-400
+      from-green-600
+      to-blue-600
+    "
   >
-    <!-- Top Bar -->
     <header
       class="
         h-8
@@ -13,7 +19,7 @@
         py-2
         px-4
         bg-gray-900 bg-opacity-90
-        text-gray-400 text-sm
+        text-sm
         shadow-lg
       "
     >
@@ -21,13 +27,11 @@
       <date-time locale="en-GB" date="full" time="short" />
     </header>
 
-    <!-- Main Content -->
     <main class="flex flex-grow items-center justify-center relative">
-      <console-window />
+      <console-window class="h-5/6 w-1/2 absolute" />
     </main>
 
-    <!-- Action Bar -->
-    <footer class="flex justify-center">
+    <footer class="flex items-center justify-center mb-2">
       <dock />
     </footer>
   </div>
